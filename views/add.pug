@@ -1,0 +1,25 @@
+extends layout 
+
+block content 
+  h1.main-heading Adding bug to the database
+  if success
+    h2 The bug has been added!
+
+  form(action='/bugs/add' method='POST')
+    label(for="refNumber") Bug reference number
+    input(type="text" name="refNumber" required)
+
+    label(for="severity") Severity 
+      small (from 1 to 10)
+    input.nud(type="number" name="severity" min='1' max='10' required)
+
+    label(for="description") Description
+    textarea(type="text" name="description" rows="10" required)
+
+    label(for="solution") Solution 
+      small (not required initially)
+    textarea(type="text" name="solution" rows="10")
+
+    input.add(type='submit' value='Add')
+
+

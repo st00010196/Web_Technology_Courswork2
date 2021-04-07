@@ -65,3 +65,38 @@ a {
   color: rgb(38, 129, 221);
   border-bottom: 2px solid rgb(38, 129, 221);
 }
+
+/* add page styling */
+
+form {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-bottom: 0.5em;
+}
+
+input,
+textarea {
+  margin-bottom: 3em;
+  font-size: 1em;
+  padding: 0.4em;
+}
+
+small {
+  font-style: italic;
+}
+
+.nud,
+.add {
+  font-size: 1.1em;
+  width: 15%;
+}
+
+.add:hover {
+  cursor: pointer;
+  background-color: rgb(38, 129, 221);
+  color: #fff;
+}
