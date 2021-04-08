@@ -22,7 +22,7 @@ class bugsRepository {
   }
 
   deleteBug(id, callback) {
-    this.getById(id)
+    const bug = this.getById(id)
     this.bugsDb.splice(this.bugsDb.indexOf(bug), 1)
     this.updateJson(callback)
   }
@@ -38,6 +38,10 @@ class bugsRepository {
     this.updateJson(callback)
   }
 
+  findSolution(refNum) {
+    const bugToDebug = this.bugsDb.find(bug => bug.refNumber === refNum)
+    return bugToDebug
+  }
 }
 
 module.exports.bugsRepository = bugsRepository

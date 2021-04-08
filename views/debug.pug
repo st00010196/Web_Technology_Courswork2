@@ -1,0 +1,10 @@
+extends layout
+
+block content
+  h1.main-heading Debugging page
+
+  h3 To find the solution, insert bug reference code that your IDE shows you
+
+  form.filtering(action="/bugs/solution" method="POST")
+    input.refSearching(type="text" name="filter" required)
+    input.find(type="submit" value="Show solution") 

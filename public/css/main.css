@@ -135,3 +135,43 @@ small {
 #delete:hover {
   color: rgb(224, 75, 75);
 }
+
+/* styling debug page */
+
+.filtering {
+  margin: 3em;
+  width: 40%;
+}
+.refSearching {
+  width: 30%;
+  display: inline;
+  margin-left: 2em;
+}
+
+.find {
+  width: 25%;
+  display: inline;
+  padding: 0.5em;
+  margin-left: 3em;
+  background-color: rgb(238, 238, 238);
+  border: 1px solid #000;
+}
+
+.find:hover {
+  cursor: pointer;
+  background-color: rgb(38, 129, 221);
+  color: #fff;
+}
+
+/* solution page styling */
+
+.info {
+  padding-bottom: 0.2em;
+  margin-top: 4em;
+  color: rgb(38, 129, 221);
+}
+
+.bugNumber,
+.solution {
+  padding: 1em;
+}

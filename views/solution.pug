@@ -1,0 +1,13 @@
+extends layout
+
+block content 
+  if ( bugToDebug != undefined && bugToDebug.solution.trim() != '')
+   h1.main-heading We have the solution for your bug 
+   h3.info Bug Refence Number
+   hr
+   p.bugNumber= bugToDebug.refNumber
+   h3.info Solution
+   hr
+   p.solution= bugToDebug.solution
+  else 
+    h1.main-heading Sorry, we don't have the solution for this bug

@@ -12,7 +12,7 @@ route
   res.render('add', { success: req.query.success})
 })
 .post((req, res) => {
-  getUserInputs(req)
+  const bug = getUserInputs(req)
 
   bugsManager.addBug( bug, (err) => {
     if (err) throw err
@@ -48,6 +48,16 @@ route
     if (err) throw err
     res.redirect('/bugs')
   })
+})
+
+route.get('/debug', (req, res) => {
+  res.render('debug')
+})
+
+route.post('/solution', (req, res) => {
+  const refNum = req.body.filter
+  const bugToDebug = bugsManager.findSolution(refNum)
+  res.render('solution', {bugToDebug})
 })
 
 function getUserInputs(request) {
