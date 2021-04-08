@@ -31,4 +31,12 @@ route.get('/', (req, res) => {
   res.render('bugs', {bugs})
 })
 
+route.get('/:id/delete', (req, res) => {
+  const id = req.params.id
+  bugsManager.deleteBug(id, (err) => {
+    if (err) throw err
+    res.redirect('/bugs')
+  })
+})
+
 module.exports = route

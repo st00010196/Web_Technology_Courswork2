@@ -21,6 +21,12 @@ class bugsRepository {
     fs.writeFile('./data/bugs.json', JSON.stringify(this.bugsDb), callback)
   }
 
+  deleteBug(id, callback) {
+    const bug = this.bugsDb.find(bug => bug.id === id)
+    this.bugsDb.splice(this.bugsDb.indexOf(bug), 1)
+    this.updateJson(callback)
+  }
+
 }
 
 module.exports.bugsRepository = bugsRepository
