@@ -22,8 +22,19 @@ class bugsRepository {
   }
 
   deleteBug(id, callback) {
-    const bug = this.bugsDb.find(bug => bug.id === id)
+    this.getById(id)
     this.bugsDb.splice(this.bugsDb.indexOf(bug), 1)
+    this.updateJson(callback)
+  }
+
+  getById(id) {
+    return this.bugsDb.find(bug => bug.id === id)
+  }
+
+  editBug(updatedBug, callback) {
+    const index = this.bugsDb.findIndex(bug => bug.id === updatedBug.id)
+
+    this.bugsDb[index] = updatedBug
     this.updateJson(callback)
   }
 

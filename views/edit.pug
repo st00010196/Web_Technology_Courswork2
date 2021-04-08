@@ -1,0 +1,20 @@
+extends layout 
+
+block content 
+  form(action='/bugs/' + bug.id + '/edit' method='POST')
+    h1.main-heading Editing existing bug
+
+    label(for="refNumber") Bug reference number
+    input(type="text" name="refNumber" value=bug.refNumber required)
+
+    label(for="severity") Severity 
+      small (from 1 to 10)
+    input.nud(type="number" name="severity" min='1' max='10' value=bug.severity required)
+
+    label(for="description") Description
+    textarea(type="text" name="description" rows="10" required)= bug.description
+
+    label(for="solution") Solution 
+    textarea(type="text" name="solution" rows="10")= bug.solution
+
+    input.add(type='submit' value='Save')

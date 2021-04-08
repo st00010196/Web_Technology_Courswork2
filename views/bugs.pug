@@ -17,6 +17,6 @@ block content
         td.column= bug.description
         td.column= bug.solution
         td.column.view
-          a#edit(href='#') Edit
+          a#edit(href='/bugs/' + bug.id + '/edit') Edit
           a#delete(href="/bugs/" + bug.id + "/delete") Delete 
       
