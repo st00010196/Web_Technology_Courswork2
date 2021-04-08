@@ -21,12 +21,14 @@ route
 
   bugsManager.addBug( bug, (err) => {
     if (err) throw err
-    res.redirect('/bugs')
+    res.redirect('/bugs/add?success=1')
   })
 })
 
 route.get('/', (req, res) => {
-  res.send('<h1> Working </h1>')
+  const bugs = bugsManager.bugsDb
+
+  res.render('bugs', {bugs})
 })
 
 module.exports = route

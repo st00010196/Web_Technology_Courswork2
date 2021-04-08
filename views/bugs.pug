@@ -1,0 +1,22 @@
+extends layout
+
+block content
+  h1.main-heading All bugs in the database that you've added
+
+  table.bugs-table
+    tr
+      th.column Reference number
+      th.column Severity
+      th.column Descirption
+      th.column Solution
+      th.column.view Details
+    each bug in bugs
+      tr
+        td.column= bug.refNumber
+        td.column= bug.severity
+        td.column= bug.description
+        td.column= bug.solution
+        td.column.view
+          a#edit(href='#') Edit
+          a#delete(href="#") Delete 
+      

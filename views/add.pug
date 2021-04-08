@@ -2,10 +2,11 @@ extends layout
 
 block content 
   h1.main-heading Adding bug to the database
-  if success
-    h2 The bug has been added!
 
   form(action='/bugs/add' method='POST')
+    if success
+    h3.message The bug has been added!
+
     label(for="refNumber") Bug reference number
     input(type="text" name="refNumber" required)
 
